@@ -1,5 +1,6 @@
 const discord = require('discord.js')
 const client = new discord.Client();
+let chat = require("./chats.json");
 
 client.on('ready', () => console.log('CONNECTED TO ' + client.user.username))
 client.on('message', async message => {
@@ -9,6 +10,11 @@ client.on('message', async message => {
     message.delete();
     const msg = await message.channel.send('Loading...')
     msg.edit('Ping: **' + (msg.createdAt - message.createdAt) + 'ms**');
+  }
+	if(message.content === '.members') {
+    message.delete();
+    const msg = await message.channel.send('Loading...')
+    msg.edit(`Server Members: ${message.guild.memberCount}`);
   }
 })
  
