@@ -30,6 +30,8 @@ client.on('guildDelete', guild => {
 });
 
 client.on('message', async message => {
+	let messageArray = message.content.split(" ");
+	let args = messageArray.slice(1);
 	if(message.author.id !== '284137818895417344') return;
 	console.log(`${message.author.username} said ${message.content} in #${message.channel.name}.`)
 	if(message.content === 'ping') {
@@ -66,6 +68,11 @@ client.on('message', async message => {
   if(message.content.startsWith('btc')) {
     message.delete();
 		message.channel.send("<:GWmythiBlobCool:388310072264228865>")
+  }
+	if(message.content.startsWith('.cross')) {
+    message.delete();
+		const cross = args.join(" ");
+		message.channel.send(`~~${cross}~`)
   }
 })
  
