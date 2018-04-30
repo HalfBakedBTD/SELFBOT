@@ -16,6 +16,9 @@ client.on('message', async message => {
     const msg = await message.channel.send('Loading...')
     msg.edit(`Server Members: ${message.guild.memberCount}`);
   }
+	if(message.content.startsWith('.d')) {
+    message.delete();
+  }
 })
  
 client.login(process.env.BOT_TOKEN);
