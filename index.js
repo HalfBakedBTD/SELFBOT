@@ -62,6 +62,10 @@ client.on('message', async message => {
 	if(message.content.startsWith('tow')) {
     message.delete();
 		message.channel.send("😜")
+  } 
+  if(message.content.startsWith('btc')) {
+    message.delete();
+		message.channel.send("<:GWmythiBlobCool:388310072264228865>")
   }
 })
  
