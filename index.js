@@ -4,7 +4,7 @@ let chat = require("./chats.json");
 
 client.on('ready', () => console.log('CONNECTED TO ' + client.user.username))
 
-cleint.on('guildCreate', guild => {
+client.on('guildCreate', guild => {
   client.channels.filter(c => c.id === '440364762505805845').forEach(channel => {
     let botAvatar = client.user.displayAvatarURL;
     let eventEmbed = new Discord.RichEmbed()
