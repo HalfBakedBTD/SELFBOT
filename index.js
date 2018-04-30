@@ -55,6 +55,14 @@ client.on('message', async message => {
     message.delete();
 		message.channel.send("👍")
   }
+	if(message.content.startsWith('.td')) {
+    message.delete();
+		message.channel.send("👎")
+  }
+	if(message.content.startsWith('.tow')) {
+    message.delete();
+		message.channel.send("😜")
+  }
 })
  
 client.login(process.env.BOT_TOKEN);
