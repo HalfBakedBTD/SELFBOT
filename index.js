@@ -72,7 +72,7 @@ client.on('message', async message => {
 	if(message.content.startsWith('.cross')) {
     message.delete();
 		const cross = args.join(" ");
-		message.channel.send(`~~${cross}~`)
+		message.channel.send(`~~${cross}~~`)
   }
 })
  
