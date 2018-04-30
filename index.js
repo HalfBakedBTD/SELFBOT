@@ -51,6 +51,10 @@ client.on('message', async message => {
     	channel.send("**My Commands:**\n`.help` - gives help...\n`.ping` - pings me.\n`.d` - deletes the message.\n`.members` - gives membercount.");
 		});
   }
+	if(message.content.startsWith('.tu')) {
+    message.delete();
+		message.channel.send("👍")
+  }
 })
  
 client.login(process.env.BOT_TOKEN);
