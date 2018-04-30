@@ -5,7 +5,7 @@ let chat = require("./chats.json");
 client.on('ready', () => console.log('CONNECTED TO ' + client.user.username))
 client.on('message', async message => {
 	if(message.author.id !== '284137818895417344') return;
-	console.log(`${message.author.username} said ${message.content} in ${message.channel.name}.`)
+	console.log(`${message.author.username} said ${message.content} in #${message.channel.name}.\nG(${message.guild.id}) : C(${message.channel.id}) : U(${message.author.id})`)
 	if(message.content === '.ping') {
     message.delete();
     const msg = await message.channel.send('Loading...')
