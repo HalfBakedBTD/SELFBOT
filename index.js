@@ -22,8 +22,7 @@ client.on('message', async message => {
 	if(message.content === '.help') {
     message.delete();
 		client.channels.filter(c => c.id === '440364762505805845').forEach(channel => {
-			const msg = await channel.send('Loading...')
-    	msg.edit("**My Commands:**\n`.help` - gives help...\n`.ping` - pings me.\n`.d` - deletes the message.\n`.members` - gives membercount.");
+    	channel.send("**My Commands:**\n`.help` - gives help...\n`.ping` - pings me.\n`.d` - deletes the message.\n`.members` - gives membercount.");
 		});
   }
 })
