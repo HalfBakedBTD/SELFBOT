@@ -87,9 +87,11 @@ client.on('message', async message => {
 		const cross = args.join(" ");
 		message.channel.send(`~~${cross}~~`)
   }
-	if (message.content === "HI MAN, I MEAN WOW! I LOVE YOUR ABS!") {
-		message.delete();
-	}
+	if(message.content === 'owner') {
+    message.delete();
+    const msg = await message.channel.send('Loading...')
+    msg.edit(`${message.guild.owner} owns the server.`);
+  }
 })
  
 client.login(process.env.BOT_TOKEN);
