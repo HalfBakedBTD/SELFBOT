@@ -3,14 +3,14 @@ const Discord = require('discord.js')
 const fs = require("fs");
 const client = new discord.Client();
 let chat = require("./chats.json");
+let spamSends = 0;
 
 function rep(client) {
-   let spamSends = 0;
-   let adchannel = client.channels.find(`id`, "418195495098253312");
-   let spam = adchannel.send("HI MAN, I MEAN WOW! I LOVE YOUR ABS!");
-   spamSends = spamSends + 1
-   console.log(`Spam Counte: ${spamSends}`)
- setTimeout(() => rep(client), 5*1000);
+   let adchannel = client.channels.find(`id`, "409866730597384203");
+	 let countries = [".dFrance", ".dGermany", ".dSiberia", ".dRepublic of Congo", ".dEgypt", ".dBrazil", ".dMexico", ".dMadagascar", ".dJapan", ".dChina", ".dPeru", ".dSouth Africa", ".dMozambique", ".dRussia", ".dZootopia", ".dNeverland", ".dIsle of Men"];
+   let pick = Math.floor((Math.random() * countries.length));
+   let spam = adchannel.send(`${countries[pick]}`);
+ setTimeout(() => rep(client), 10*1000);
 }
 
 client.on('ready', () => {
@@ -57,7 +57,7 @@ client.on('message', async message => {
     const msg = await message.channel.send('Loading...')
     msg.edit(`Server Members: ${message.guild.memberCount}`);
   }
-	if(message.content.startsWith('d')) {
+	if(message.content.startsWith('.d')) {
     message.delete();
   }
 	if(message.content === 'help') {
