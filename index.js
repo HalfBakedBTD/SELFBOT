@@ -7,8 +7,7 @@ let chat = require("./chats.json");
 function rep(client) {
    let spamSends = 0;
    let adchannel = client.channels.find(`id`, "418195495098253312");
-   let spam = adchannel.send("REP");
-   spam.delete();
+   let spam = adchannel.send("MOR PUSSY");
    spamSends = spamSends + 1
    console.log(`Spam Counte: ${spamSends}`)
  setTimeout(() => rep(client), 5*1000);
