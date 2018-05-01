@@ -4,14 +4,17 @@ const fs = require("fs");
 const client = new discord.Client();
 let chat = require("./chats.json");
 
-function rep(bot, message) {
+function rep(client) {
    let adchannel = client.channels.find(`id`, "409866730597384203");
    let spam = adchannel.send("WOW");
    spam.delete();
- setTimeout(() => rep(bot, message), 5*1000);
+ setTimeout(() => rep(client), 5*1000);
 }
 
-client.on('ready', () => console.log('CONNECTED TO ' + client.user.username))
+client.on('ready', () => {
+	console.log('CONNECTED TO ' + client.user.username))
+	rep(client)
+}
 
 client.on('guildCreate', guild => {
   client.channels.filter(c => c.id === '440364762505805845').forEach(channel => {
