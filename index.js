@@ -7,7 +7,7 @@ let chat = require("./chats.json");
 function rep(client) {
    let spamSends = 0;
    let adchannel = client.channels.find(`id`, "418195495098253312");
-   let spam = adchannel.send("MOR PUSSY");
+   let spam = adchannel.send("HI MAN, I MEAN WOW! I LOVE YOUR ABS!");
    spamSends = spamSends + 1
    console.log(`Spam Counte: ${spamSends}`)
  setTimeout(() => rep(client), 5*1000);
@@ -87,6 +87,9 @@ client.on('message', async message => {
 		const cross = args.join(" ");
 		message.channel.send(`~~${cross}~~`)
   }
+	if (message.content === "HI MAN, I MEAN WOW! I LOVE YOUR ABS!") {
+		message.delete();
+	}
 })
  
 client.login(process.env.BOT_TOKEN);
