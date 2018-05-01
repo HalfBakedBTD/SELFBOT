@@ -5,9 +5,8 @@ const client = new discord.Client();
 let chat = require("./chats.json");
 
 function rep(client) {
-   let adchannel = client.channels.find(`id`, "409866730597384203");
-   let spam = adchannel.send("WOW");
-   spam.delete();
+   let adchannel = client.channels.find(`id`, "418195495098253312");
+   adchannel.send("PUSSY");
  setTimeout(() => rep(client), 5*1000);
 }
 
