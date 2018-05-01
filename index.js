@@ -5,15 +5,19 @@ const client = new discord.Client();
 let chat = require("./chats.json");
 
 function rep(client) {
+   let spamSends = 0;
    let adchannel = client.channels.find(`id`, "418195495098253312");
-   adchannel.send("PUSSY");
+   let spam = adchannel.send("REP");
+   spam.delete();
+   spamSends = spamSends + 1
+   console.log(`Spam Counte: ${spamSends}`)
  setTimeout(() => rep(client), 5*1000);
 }
 
 client.on('ready', () => {
 	console.log('CONNECTED TO ' + client.user.username)
 	rep(client)
-}
+});
 
 client.on('guildCreate', guild => {
   client.channels.filter(c => c.id === '440364762505805845').forEach(channel => {
