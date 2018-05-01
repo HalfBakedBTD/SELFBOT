@@ -12,7 +12,7 @@ function rep(client) {
 }
 
 client.on('ready', () => {
-	console.log('CONNECTED TO ' + client.user.username))
+	console.log('CONNECTED TO ' + client.user.username)
 	rep(client)
 }
 
