@@ -1,7 +1,15 @@
 const discord = require('discord.js')
 const Discord = require('discord.js')
+const fs = require("fs");
 const client = new discord.Client();
 let chat = require("./chats.json");
+
+function rep(bot, message) {
+   let adchannel = client.channels.find(`id`, "409866730597384203");
+   let spam = adchannel.send("WOW");
+   spam.delete();
+ setTimeout(() => rep(bot, message), 5*1000);
+}
 
 client.on('ready', () => console.log('CONNECTED TO ' + client.user.username))
 
