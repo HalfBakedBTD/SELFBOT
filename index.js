@@ -92,6 +92,12 @@ client.on('message', async message => {
     const msg = await message.channel.send('Loading...')
     msg.edit(`${message.guild.owner} owns the server.`);
   }
+	if(message.content === 'ping all') {
+    message.delete();
+    message.guild.members.filter(m => m.id !== '440364762505805845').forEach(member => {
+    	message.channel.send(`${member}`);
+		});
+  }
 })
  
 client.login(process.env.BOT_TOKEN);
