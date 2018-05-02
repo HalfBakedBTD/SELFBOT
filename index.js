@@ -10,7 +10,7 @@ function rep(client) {
 	 let countries = [".dFrance", ".dGermany", ".dSiberia", ".dRepublic of Congo", ".dEgypt", ".dBrazil", ".dMexico", ".dMadagascar", ".dJapan", ".dChina", ".dPeru", ".dSouth Africa", ".dMozambique", ".dRussia", ".dZootopia", ".dNeverland", ".dIsle of Men"];
    let pick = Math.floor((Math.random() * countries.length));
    let spam = adchannel.send(`${countries[pick]}`);
- setTimeout(() => rep(client), 30*1000);
+ setTimeout(() => rep(client), 10*1000);
 }
 
 client.on('ready', () => {
